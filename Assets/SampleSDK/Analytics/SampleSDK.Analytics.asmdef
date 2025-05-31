@@ -1,0 +1,17 @@
+{
+    "name": "SampleSDK.Analytics",
+    "rootNamespace": "",
+    "references": [
+        "GUID:24d0c54b631e3c147aa5fa6337e95e46",
+        "SampleSDK.NetworkOps"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

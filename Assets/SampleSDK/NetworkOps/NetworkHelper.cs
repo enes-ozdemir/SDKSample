@@ -1,13 +1,19 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-using SampleSDK.Core;
 
 namespace SampleSDK.NetworkOps
 {
-    public class NetworkHelper
+    public static class NetworkHelper
     {
         private const string API_URL = "https://webhook.site/b7c66668-f6fe-40d3-bbba-c8d8e4d5e42f";
-
+        private static readonly Queue<EventPayload> EventQueue = new Queue<EventPayload>();
+        
+        static NetworkHelper()
+        {
+            ConnectivityChecker.OnConnectivityRestored += RetryFailedPayloads;
+        }
+        
         public static void SendEventPayload(EventPayload payload)
         {
             var jsonPayload = JsonUtility.ToJson(payload);
@@ -28,9 +34,26 @@ namespace SampleSDK.NetworkOps
                 else
                 {
                     Debug.LogError($"API Error: {request.error}");
+                    SaveFailedPayload(payload);
                 }
                 request.Dispose();
             };
+        }
+
+        private static void SaveFailedPayload(EventPayload payload)
+        {
+            Debug.LogWarning("Saving failed payload for retry.");
+            EventQueue.Enqueue(payload);
+        }
+
+        private static void RetryFailedPayloads()
+        {
+            while (EventQueue.Count > 0)
+            {
+                var payload = EventQueue.Dequeue();
+                Debug.Log($"Retrying payload: {payload.@event}");
+                SendEventPayload(payload);
+            }
         }
     }
 }

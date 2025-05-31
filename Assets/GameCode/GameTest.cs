@@ -26,7 +26,7 @@ namespace GameCode
 
         private void OnGameButtonClick()
         {
-            SampleSDK.Core.SampleSDK.TrackEvent("my button click");
+            SampleSDK.Analytics.Analytics.TrackEvent("my button click");
         }
     }
 }

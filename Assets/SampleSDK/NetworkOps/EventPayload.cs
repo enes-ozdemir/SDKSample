@@ -1,8 +1,7 @@
 using System;
 
-namespace SampleSDK.Core
+namespace SampleSDK.NetworkOps
 {
-    //Make this internal to prevent direct access from outside the SDK
     [Serializable]
     public class EventPayload
     {

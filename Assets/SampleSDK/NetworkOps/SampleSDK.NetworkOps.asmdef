@@ -1,0 +1,16 @@
+{
+    "name": "SampleSDK.NetworkOps",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0b563b4072edf1d42871c7ee63a91fa5"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
