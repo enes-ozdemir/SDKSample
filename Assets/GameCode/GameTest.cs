@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using SampleSDK.Analytics;
+using SampleSDK.Core;
 
 namespace GameCode
 {
@@ -20,13 +22,13 @@ namespace GameCode
 
         private void Awake()
         {
-            SampleSDK.Core.SampleSDK.Initialize();
+            SDKCore.Initialize();
             GameButtonClick += OnGameButtonClick;
         }
 
         private void OnGameButtonClick()
         {
-            SampleSDK.Analytics.Analytics.TrackEvent("my button click");
+            Analytics.TrackEvent("my button click");
         }
     }
 }

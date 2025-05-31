@@ -9,6 +9,9 @@ namespace SampleSDK.Core
       
       public static event Action OnInitialized;
       
+      /// <summary>
+      /// Initializes the SampleSDK.
+      /// </summary>
       public static void Initialize()
       {
          if (IsInitialized)
