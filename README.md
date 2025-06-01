@@ -13,7 +13,7 @@ This SDK for tracking user sessions and events with offline support and data per
 ## Usage
 ```csharp
 // Initialize the SDK (typically in Awake or Start)
-SampleSDK.Initialize();
+SDKCore.Initialize();
 
 // Track custom events
 Analytics.TrackEvent("button_click");
