@@ -6,6 +6,10 @@ This SDK for tracking user sessions and events with offline support and data per
 1. Import the `SampleSDK.unitypackage` into your Unity project
 2. Call `SDKCore.Initialize();` to initialize the SDK.
 
+## Features
+- Tracks user sessions and custom events.
+- Supports offline mode with data persistence.
+
 ## Usage
 ```csharp
 // Initialize the SDK (typically in Awake or Start)
@@ -21,7 +25,7 @@ Analytics.TrackEvent("purchase_made");
 ```csharp
 public class GameManager : MonoBehaviour
 {
-    void Awake()
+    private void Awake()
     {
         // Initialize the SDK
         SDKCore.Initialize();
