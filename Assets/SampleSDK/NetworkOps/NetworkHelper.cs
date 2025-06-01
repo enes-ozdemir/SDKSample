@@ -11,7 +11,7 @@ namespace SampleSDK.NetworkOps
 {
     public static class NetworkHelper
     {
-        private const string API_URL = "https://webhook.site/e716cce9-31a8-4bd8-a050-6a7f13bad1e2";
+        private const string API_URL = "https://exampleapi.rollic.gs/event";
         private static readonly Queue<EventPayload> EventQueue = new Queue<EventPayload>();
         private static CancellationTokenSource _cts = new CancellationTokenSource();
         private const int MaxQueueSize = 200;
