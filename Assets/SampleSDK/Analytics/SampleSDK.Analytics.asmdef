@@ -1,17 +1,17 @@
 {
-    "name": "SampleSDK.Analytics",
-    "rootNamespace": "SampleSDK.Analytics",
-    "references": [
-        "GUID:24d0c54b631e3c147aa5fa6337e95e46",
-        "SampleSDK.Core"
-    ],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+  "name": "SampleSDK.Analytics",
+  "rootNamespace": "SampleSDK.Analytics",
+  "references": [
+    "GUID:24d0c54b631e3c147aa5fa6337e95e46",
+    "SampleSDK.Core"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 }

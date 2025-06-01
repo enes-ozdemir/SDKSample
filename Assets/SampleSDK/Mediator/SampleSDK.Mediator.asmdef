@@ -1,18 +1,18 @@
 {
-    "name": "SampleSDK.Mediator",
-    "rootNamespace": "SampleSDK.Mediator",
-    "references": [
-        "SampleSDK.Core",
-        "GUID:24d0c54b631e3c147aa5fa6337e95e46",
-        "GUID:892128bad18a0a344b0659dd828bb59f"
-    ],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
-    "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+  "name": "SampleSDK.Mediator",
+  "rootNamespace": "SampleSDK.Mediator",
+  "references": [
+    "SampleSDK.Core",
+    "GUID:24d0c54b631e3c147aa5fa6337e95e46",
+    "GUID:892128bad18a0a344b0659dd828bb59f"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 } 

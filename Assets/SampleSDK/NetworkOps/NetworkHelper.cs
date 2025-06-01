@@ -60,7 +60,7 @@ namespace SampleSDK.NetworkOps
                 {
                     if (await TrySendRequestAsync(jsonPayload))
                     {
-                        Debug.Log($"API Response: {jsonPayload}");
+                        Debug.Log($"Json Payload: {jsonPayload}");
                         return;
                     }
                 }
