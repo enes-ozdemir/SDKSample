@@ -2,9 +2,9 @@
     "name": "SampleSDK.Mediator",
     "rootNamespace": "SampleSDK.Mediator",
     "references": [
-        "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "SampleSDK.NetworkOps",
-        "SampleSDK.Analytics"
+        "SampleSDK.Core",
+        "GUID:24d0c54b631e3c147aa5fa6337e95e46",
+        "GUID:892128bad18a0a344b0659dd828bb59f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

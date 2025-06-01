@@ -11,7 +11,7 @@ namespace SampleSDK.NetworkOps
 {
     public static class NetworkHelper
     {
-        private const string API_URL = "https://exampleapi.rollic.gs/event";
+        private const string API_URL = "https://webhook.site/e716cce9-31a8-4bd8-a050-6a7f13bad1e2";
         private static readonly Queue<EventPayload> EventQueue = new Queue<EventPayload>();
         private static CancellationTokenSource _cts = new CancellationTokenSource();
         private const int MaxQueueSize = 200;
@@ -21,18 +21,15 @@ namespace SampleSDK.NetworkOps
 
         public static void Initialize()
         {
-            Debug.Log("NetworkHelper initialized.");
-            Core.SDKCore.OnInitialized += () =>
-            {
-                ConnectivityChecker.Initialize();
-                LoadFailedPayloads();
-                ConnectivityChecker.OnConnectivityRestored += RetryFailedPayloads;
-                Application.quitting += CleanupAndSaveState;
-            };
+            ConnectivityChecker.Initialize();
+            LoadFailedPayloads();
+            ConnectivityChecker.OnConnectivityRestored += RetryFailedPayloads;
+            Application.quitting += CleanupAndSaveState;
         }
 
         private static void CleanupAndSaveState()
         {
+            ConnectivityChecker.OnConnectivityRestored -= RetryFailedPayloads;
             SaveFailedPayloadsToDisk();
             _cts?.Cancel();
         }

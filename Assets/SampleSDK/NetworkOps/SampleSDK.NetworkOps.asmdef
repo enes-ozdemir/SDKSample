@@ -1,6 +1,6 @@
 {
     "name": "SampleSDK.NetworkOps",
-    "rootNamespace": "",
+    "rootNamespace": "SampleSDK.NetworkOps",
     "references": [
         "GUID:0b563b4072edf1d42871c7ee63a91fa5"
     ],
