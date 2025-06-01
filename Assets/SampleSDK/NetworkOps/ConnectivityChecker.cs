@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SampleSDK.NetworkOps
 {
-    public static class ConnectivityChecker
+    internal static class ConnectivityChecker
     {
         internal static event Action OnConnectivityRestored;
         private static CancellationTokenSource _cancellationTokenSource;
@@ -35,7 +35,7 @@ namespace SampleSDK.NetworkOps
             _connectivityStarted = false;
         }
 
-        public static bool IsConnectionOnline()
+        internal static bool IsConnectionOnline()
         {
             return Application.internetReachability != NetworkReachability.NotReachable;
         }

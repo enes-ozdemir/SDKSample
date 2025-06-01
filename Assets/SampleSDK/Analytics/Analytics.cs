@@ -19,10 +19,12 @@ namespace SampleSDK.Analytics
 
             Debug.Log($"Payload: Event = {payload.@event}, Session Time = {payload.sessionTime}");
             NetworkHelper.SendEventPayload(payload);
+            Application.quitting += () => TrackEvent("SessionEnd");
         }
 
         public static void Initialize()
         {
+            Debug.Log("Analytics module initialized.");
             TrackEvent("SessionStart");
         }
     }

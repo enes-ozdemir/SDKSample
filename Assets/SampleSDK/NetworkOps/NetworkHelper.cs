@@ -9,7 +9,7 @@ using UnityEngine.Networking;
 
 namespace SampleSDK.NetworkOps
 {
-    public static class NetworkHelper
+    internal static class NetworkHelper
     {
         private const string API_URL = "https://exampleapi.rollic.gs/event";
         private static readonly Queue<EventPayload> EventQueue = new Queue<EventPayload>();
@@ -19,22 +19,16 @@ namespace SampleSDK.NetworkOps
         private static readonly string FailedPayloadsFilePath =
             Path.Combine(Application.persistentDataPath, "FailedPayloads.json");
 
-        public static void Initialize()
+        internal static void Initialize()
         {
+            Debug.Log("Initializing NetworkHelper...");
             ConnectivityChecker.Initialize();
             LoadFailedPayloads();
             ConnectivityChecker.OnConnectivityRestored += RetryFailedPayloads;
             Application.quitting += CleanupAndSaveState;
         }
 
-        private static void CleanupAndSaveState()
-        {
-            ConnectivityChecker.OnConnectivityRestored -= RetryFailedPayloads;
-            SaveFailedPayloadsToDisk();
-            _cts?.Cancel();
-        }
-
-        public static void SendEventPayload(EventPayload payload)
+        internal static void SendEventPayload(EventPayload payload)
         {
             if (!ConnectivityChecker.IsConnectionOnline())
             {
@@ -180,6 +174,13 @@ namespace SampleSDK.NetworkOps
 
             Debug.Log("Loaded failed payloads from file storage.");
             RetryFailedPayloads();
+        }
+
+        private static void CleanupAndSaveState()
+        {
+            ConnectivityChecker.OnConnectivityRestored -= RetryFailedPayloads;
+            SaveFailedPayloadsToDisk();
+            _cts?.Cancel();
         }
     }
 }
